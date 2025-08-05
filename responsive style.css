@@ -1,0 +1,293 @@
+/* Base styles and font import */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f5f6fa;
+  color: #232323;
+}
+
+/* Container utility */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+/* ================================
+   Navbar & Sticky Navigation
+   ================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(34, 34, 34, 0.96);
+  box-shadow: 0 4px 16px rgba(34, 34, 34, 0.08);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0 0 14px 14px;
+}
+.brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* Navigation menu */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  align-items: center;
+  padding: 0;
+}
+.nav-links li {
+  display: block;
+}
+.nav-links a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover, .nav-links a:focus {
+  background: #fff;
+  color: #232323;
+  outline: none;
+}
+
+/* ================================
+   Hamburger Menu (Mobile)
+   ================================ */
+/* Hamburger icon base */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  width: 32px;
+  height: 28px;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: auto;
+  user-select: none;
+}
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 6px;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(.77,0,.18,1.3);
+}
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(34,34,34, 0.97);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: max-height 0.4s cubic-bezier(.77,0,.18,1.3), 
+                opacity 0.3s cubic-bezier(.55,.06,.68,.19),
+                transform 0.3s cubic-bezier(.77,0,.18,1.3);
+    z-index: 50;
+  }
+  .nav-links li {
+    text-align: center;
+    margin: 0;
+  }
+  .nav-links a {
+    padding: 1.2rem 0;
+    font-size: 1.15rem;
+    width: 100%;
+  }
+  /* Hamburger visible */
+  .hamburger {
+    display: flex;
+  }
+  /* Menu open */
+  .nav-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 7px);
+  }
+  .nav-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 320px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* ================================
+   Sections
+   ================================ */
+.section {
+  background: #fff;
+}
+.section-alt {
+  background: #f1f3f8;
+}
+.hero {
+  background: linear-gradient(120deg, #3180d6 0%, #21c7b7 100%);
+  color: #fff;
+  padding: 120px 0 90px 0;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+}
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.92;
+}
+
+/* Other sections */
+.section, .section-alt {
+  padding: 70px 0;
+}
+.section h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.services-list {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 20px 0 0 0;
+}
+.services-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.portfolio-item {
+  background: #f8fafb;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 2px 12px rgba(34, 34, 34, 0.05);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  border: 1px solid #c3cad8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.15s;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #21c7b7;
+  outline: none;
+}
+.contact-form button {
+  background: linear-gradient(90deg,#3180d6 0%,#21c7b7 100%);
+  color: #fff;
+  border: none;
+  padding: 14px 0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form button:hover, .contact-form button:focus {
+  background: #232323;
+}
+
+/* ================================
+   Footer
+   ================================ */
+footer {
+  background: #232323;
+  color: #fff;
+  text-align: center;
+  padding: 35px 0 25px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 18px 18px 0 0;
+}
+footer .container {
+  padding: 0;
+}
+
+/* ================================
+   General Responsive
+   ================================ */
+@media (max-width: 590px) {
+  .container {
+    width: 96%;
+    padding: 45px 0;
+  }
+  .hero h1 {
+    font-size: 1.45rem;
+  }
+  .section h2 {
+    font-size: 1.3rem;
+  }
+  .portfolio-grid {
+    gap: 14px;
+  }
+  .portfolio-item {
+    padding: 24px;
+  }
+}
+
