@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creative Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header & Sticky Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="brand">Creative Studio</div>
+      <!-- Hamburger menu toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <label class="hamburger" for="nav-toggle" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <!-- Navigation links -->
+      <ul class="nav-links">
+        <li><a href="#home" tabindex="0">Home</a></li>
+        <li><a href="#about" tabindex="0">About</a></li>
+        <li><a href="#services" tabindex="0">Services</a></li>
+        <li><a href="#portfolio" tabindex="0">Portfolio</a></li>
+        <li><a href="#contact" tabindex="0">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+      <div class="container">
+        <h1>Welcome to Creative Studio</h1>
+        <p>Your vision, our creation.</p>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>We are a passionate team of designers and developers creating impactful solutions for brands and businesses worldwide.</p>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="section-alt">
+      <div class="container">
+        <h2>Our Services</h2>
+        <ul class="services-list">
+          <li>Web Design</li>
+          <li>Brand Identity</li>
+          <li>UI/UX Consulting</li>
+          <li>Digital Strategy</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">Project A</div>
+          <div class="portfolio-item">Project B</div>
+          <div class="portfolio-item">Project C</div>
+          <div class="portfolio-item">Project D</div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section-alt">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" autocomplete="off">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      &copy; 2025 Creative Studio. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
